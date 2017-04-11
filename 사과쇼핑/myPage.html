@@ -1,0 +1,314 @@
+﻿<?php
+	session_start();
+?>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta http-equiv="cotnet-type" content="text/html; charset=utf-8">
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> <!--유아이 이펙트용-->
+	
+	<style>	
+	<!--전체에 좌우 여백 추가 
+	*,
+	*:before,
+	*:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	}
+	-->
+		header  { 
+			padding: 10px 300px;
+			background-color: whitesmoke;
+			background: url('header.png') no-repeat 0 0;
+			min-width : 300px;
+			
+		}
+	
+        #title {
+			text-decoration:none;
+			display: inline-block;
+			background-color: transparent;
+			color: white;
+			font-size: 25px;
+			font-weight: bold;
+			text-transform: uppercase;
+			padding: 4px 20px;
+			
+		}
+		body {
+            width: 100%;
+			height: auto;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			background-color: whitesmoke;
+			font-family: arial, sans-serif;
+			margin:0px auto;
+			
+        }
+
+        p {
+            margin: 0.5em 0;
+            font-family: sans-serif;
+            font-size: 0.875em;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            color: #252525;
+        }
+		
+		#topMenu ul li {
+		list-style: none;
+		color: white;
+		background-color: #2d2d2d;
+		float: left;
+		line-height: 30px;
+		vertical-align: middle;
+		text-align: center;
+		
+		}
+
+		#topMenu .menuLink {
+		text-decoration:none;
+		color: white;
+		display: block;
+		width: 160px;
+		font-size: 12px;
+		font-weight: bold;
+		font-family: "Trebuchet MS";
+		}
+		#topMenu .menuLink:hover {
+			color:  lightgreen;
+			background-color: #4d4d4d;
+		}
+		
+		.clear {
+		  clear: both;
+		}
+
+		.items {
+		  display: block;
+		  margin: 20px 0;
+		  display: table-cell;
+		  vertical-align: middle;
+		}
+
+		.item {
+		  background-color: #fff;
+		  float: left;
+		  margin: 0 30px 30px 0;
+		  width: 205px;
+		  padding: 10px;
+		  height: 290px;
+		}
+
+		.item img {
+		  display: block;
+		  margin: auto;
+		  max-width:100%;
+		}
+
+		h2 {
+		  font-size: 16px;
+		  display: block;
+		  border-bottom: 1px solid #ccc;
+		  margin: 0 0 10px 0;
+		  padding: 0 0 5px 0;
+		}
+
+		button {
+		  border: 1px solid #722A1B;
+		  padding: 4px 14px;
+		  background-color: #fff;
+		  color: #722A1B;
+		  text-transform: uppercase;
+		  float: right;
+		  margin: 5px 0;
+		  font-weight: bold;
+		  cursor: pointer;
+		}
+
+
+		
+		/* =================================
+		  Media Queries
+		==================================== */
+		
+		@media (min-width: 0) and (max-width: 768px) {
+		  .wrapper {
+			padding: 0 1.225em 2.5em;
+		  }
+		}
+
+		@media (min-width: 1024px) {
+		  .items {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+		  }
+		  .item {
+			margin-bottom: 3em;
+			width: 25%%;
+			flex-grow: 1;
+		  }
+		}
+
+		@media (min-width: 1600px) {
+		  .item {
+			margin-bottom: 4em;
+			width: 30%;
+		  }
+		  h2 {
+			line-height: 1;
+		  }
+		}
+		
+	
+
+	
+	
+	
+	#item-list ul {
+  padding: 0;
+  margin: 20px 0;
+  font-family: Arial, sans serif;
+  color: #555;
+}
+
+#item-list ul > li {
+  list-style: none;
+  border-top: 1px solid #ddd;
+  display: block;
+  padding: 15px;
+  overflow: hidden;
+}
+
+#item-list ul:last-child {
+  border-bottom: 1px solid #ddd;
+}
+
+#item-list ul > li:hover {
+  background: #efefef;
+}
+
+.button {
+  padding: 8px 12px;
+  font-size: 14px;
+  background: #ccc;
+  display: block: width: 200px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+
+
+h2 {
+  padding: 0;
+  margin: 0 0 5px 0;
+  font-size: 18px;
+}
+
+span {
+  font-size: 14px;
+}
+
+
+
+
+.icon {
+  height: 50px;
+  width: 50px;
+  float: left;
+  margin: 0 15px 0 0;
+   background: url("apple.jpg");
+   background-size:     cover;
+}
+
+    </style>
+	
+	<title> Apple Shopping </title>
+	
+</head>
+
+<body>
+
+	<header>
+		<h1> <a  id = 'title' href="appleShopping.html">생명의 사과 - 까지농장 </a></h1>
+	</header>
+	
+	<nav id="topMenu" >
+		<ul>
+			<li><a class="menuLink" href="appleShopping.html">까지농장</a></li>
+			<li>|</li>
+			<li><a class="menuLink" href="appleShopping.html">사과주문</a></li>
+			<li>|</li>
+			<li><a class="menuLink" href="viewPage.html">농장둘러보기</a></li>
+			<li>|</li>
+			<li><a class="menuLink" href="#">Q&A </a></li>
+			<li>|</li>
+			<li><a class="menuLink" href="join.html" onClick="window.open('join.html', 'new', 'resizable=no width=400 height=600'); return false">MY</a></li>
+		</ul>
+	</nav>
+	
+	
+	
+	<div id="item-list">
+		<h2>주문내역</h2>
+	</div>
+ 
+	
+	
+
+<?php
+ $con = mysqli_connect('localhost','wa16s','1','wa16s_db');
+ if (!$con) {
+     die('Could not connect: ' . mysqli_error($con));
+ } 
+
+
+
+	
+	
+ if($_SESSION["isSeller"] == true){
+ 	$sql="SELECT * FROM 201121042_OrderList ";
+	$result = mysqli_query($con,$sql);	
+	while($row = mysqli_fetch_array($result)) {
+	     
+		 echo "<ul><li><a><div class=".'icon'."></div>
+        <h2>사과번호 : ".$row['appleID']."</h2>
+        <span>";
+		 echo "회원아이디 : ".$row['memberID']."  ";
+		 echo "주문수량 : ".$row['numOfOrder']."   ";
+		 echo "배송지 : ".$row['Address']."   ";
+		 echo "주문날짜 : ".$row['date']."</span></a></li></ul>";
+	}
+ } else {
+	$sql="SELECT * FROM 201121042_OrderList";
+	$result = mysqli_query($con,$sql);	
+	while($row = mysqli_fetch_array($result)) {
+		if($_SESSION["id"] == $row['memberID'] ){
+			echo "<ul><li><a><div class=".'icon'."></div>
+			<h2>사과번호 : ".$row['appleID']."</h2>
+			<span>";
+			 echo "회원아이디 : ".$row['memberID']."  ";
+			 echo "주문수량 : ".$row['numOfOrder']."   ";
+			 echo "배송지 : ".$row['Address']."   ";
+			 echo "주문날짜 : ".$row['date']."</span></a></li></ul>";
+		}
+	}
+ }
+ 
+ 
+ ?>	
+
+</body>
+
+	<script>
+
+	</script>
+	
+
+</html>

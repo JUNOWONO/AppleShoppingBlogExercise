@@ -1,0 +1,285 @@
+	Apple Table
+
+속성	ID	Type	Stock	Price
+
+
+
+	Member Table
+	
+속성	ID	Password	Name	Address	Email	Point
+
+
+	Seller Table
+
+속성	ID	Password	Name	Email	
+
+
+	CartList Table
+
+속성	ID(멤버)	ID(애플)	
+
+
+
+	OrderList Tabel
+	
+속성	ID(맴버)	ID(애플)	주문수량	날짜
+
+
+
+오더 리스트에는 회원이 로그인해서 들어가면 해당 회원이 주문한 내용이 뜨고 
+셀러가 로근인해서 들어가면 모든 맴버의 주문 내용이 뜸 
+
+로그인 할때 회원 아이디를 변수에 저장해 뒀다가 아이디가 Member에 속한 아이디면 
+Cart 테이블과 OrderList테이블에서 정보들을 받아와 둔다.
+Seller에 속한 ID이면 OrderList의 모든 정보를 받아와 둔다. 
+
+
+
+$sql = "INSERT INTO 201121042_Apple (type, stock, price)
+VALUES ('BUSA BIG', 9999, 51100 ) ";
+ if ($con->query($sql) === TRUE) {
+	echo "values inserted successfully";
+	} else {echo "Error insert values:".$conn->error;}
+$sql = "INSERT INTO 201121042_Apple (type, stock, price)
+VALUES ('BUSA MIDDLE', 9999, 42600 ) ";
+ if ($con->query($sql) === TRUE) {
+	echo "values inserted successfully";
+	} else {echo "Error insert values:".$conn->error;}
+$sql = "INSERT INTO 201121042_Apple (type, stock, price)
+VALUES ('BUSA SMALL', 9999, 33900) ";
+ if ($con->query($sql) === TRUE) {
+	echo "values inserted successfully";
+	} else {echo "Error insert values:".$conn->error;}
+$sql = "INSERT INTO 201121042_Apple (type, stock, price)
+VALUES ('BUSA UGLY', 9999, 30000)";
+ if ($con->query($sql) === TRUE) {
+	echo "values inserted successfully";
+	} else {echo "Error insert values:".$conn->error;}
+
+$sql = "INSERT INTO 201121042_Apple (type, stock, price)
+VALUES ('MIYAMA BIG', 9999, 113300) ";
+ if ($con->query($sql) === TRUE) {
+	echo "values inserted successfully";
+	} else {echo "Error insert values:".$conn->error;}
+$sql = "INSERT INTO 201121042_Apple (type, stock, price)
+VALUES ('MIYAMA MIDDLE', 9999, 70000) ";
+ if ($con->query($sql) === TRUE) {
+	echo "values inserted successfully";
+	} else {echo "Error insert values:".$conn->error;}
+$sql = "INSERT INTO 201121042_Apple (type, stock, price)
+VALUES ('MIYAMA SMALL', 9999, 52900) ";
+ if ($con->query($sql) === TRUE) {
+	echo "values inserted successfully";
+	} else {echo "Error insert values:".$conn->error;}
+$sql = "INSERT INTO 201121042_Apple (type, stock, price)
+VALUES ('MIYAMA UGLY', 9999, 43200) ";
+ if ($con->query($sql) === TRUE) {
+	echo "values inserted successfully";
+	} else {echo "Error insert values:".$conn->error;}
+
+
+$sql = "INSERT INTO 201121042_Apple (type, stock, price)
+VALUES ('MISHIMA BIG', 9999, 86200) ";
+ if ($con->query($sql) === TRUE) {
+	echo "values inserted successfully";
+	} else {echo "Error insert values:".$conn->error;}
+$sql = "INSERT INTO 201121042_Apple (type, stock, price)
+VALUES ('MIYAMA MIDDLE', 9999, 54600) ";
+ if ($con->query($sql) === TRUE) {
+	echo "values inserted successfully";
+	} else {echo "Error insert values:".$conn->error;}
+$sql = "INSERT INTO 201121042_Apple (type, stock, price)
+VALUES ('MIYAMA SMALL', 9999, 45900) ";
+ if ($con->query($sql) === TRUE) {
+	echo "values inserted successfully";
+	} else {echo "Error insert values:".$conn->error;}
+$sql = "INSERT INTO 201121042_Apple (type, stock, price)
+VALUES ('MIYAMA UGLY', 9999, 35000) ";
+ if ($con->query($sql) === TRUE) {
+	echo "values inserted successfully";
+	} else {echo "Error insert values:".$conn->error;}
+	
+
+
+
+
+
+
+
+$sql = "INSERT INTO 201121042_Member (id, password, name, Address, email, point)
+VALUES ('firstMember','1','KIM YIL', 'Ajou Univ, Woncheon-dong', 'ichi@naver.com', 1000)";
+ if ($con->query($sql) === TRUE) {
+	echo "values inserted successfully";
+	} else {echo "Error insert values:".$conn->error;}
+	
+
+$sql = "INSERT INTO 201121042_Member (id, password, name, Address, email, point)
+VALUES ('pinguo','1','KIM YI', 'Ajou Univ, Woncheon-dong', 'ni@naver.com', 1000)";
+ if ($con->query($sql) === TRUE) {
+	echo "values inserted successfully";
+	} else {echo "Error insert values:".$conn->error;}
+$sql = "INSERT INTO 201121042_Member (id, password, name, Address, email, point)
+VALUES ('linggo','1','KIM SAM', 'Ajou Univ, Woncheon-dong', 'san@naver.com', 1000)";
+ if ($con->query($sql) === TRUE) {
+	echo "values inserted successfully";
+	} else {echo "Error insert values:".$conn->error;}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$sql = "INSERT INTO 201121042_Member (id, password, name, Address, email, point)
+VALUES ('firstmember','1','KIM IL', 'Ajou Univ, Woncheon-dong, Yeongtong-gu, Suwon-si, Gyeonggi-do, Korea') ";
+ if ($con->query($sql) === TRUE) {
+	echo "values inserted successfully";
+	} else {echo "Error insert values:".$conn->error;}
+
+
+
+
+	
+
+	$sql = "CREATE TABLE IF NOT EXISTs 201121042_Apple (
+	id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	type VARCHAR(30) NOT NULL,
+	stock INT,
+	price INT NOT NULL
+	)";
+	if ($con->query($sql) === TRUE) {
+	echo "Table MyGuests created successfully";
+	} else {echo "Error creating table:".$conn->error;}
+
+
+	$sql = "CREATE TABLE 201121042_Member (
+	id VARCHAR(30) PRIMARY KEY,
+	password VARCHAR(30) NOT NULL, 
+	name VARCHAR(30) NOT NULL,
+	Address VARCHAR(100) NOT NULL,
+	email VARCHAR(30),
+	point INT
+	)";
+	if ($con->query($sql) === TRUE) {
+	echo "Table MyGuests created successfully";
+	} else {echo "Error creating table:".$conn->error;}
+
+
+
+
+	$sql = "CREATE TABLE 201121042_Seller (
+	id VARCHAR(30) PRIMARY KEY,
+	password VARCHAR(30) NOT NULL, 
+	name VARCHAR(30) NOT NULL,
+	email VARCHAR(30)
+	)";
+	if ($con->query($sql) === TRUE) {
+	echo "Table MyGuests created successfully";
+	} else {echo "Error creating table:".$conn->error;}
+
+
+
+
+	$sql = "CREATE TABLE 201121042_CartList (
+	id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	memberID VARCHAR(30),
+	appleID INT(6), 
+	)";
+	if ($con->query($sql) === TRUE) {
+	echo "Table MyGuests created successfully";
+	} else {echo "Error creating table:".$conn->error;}
+	
+
+
+
+
+	$sql = "CREATE TABLE 201121042_OrderList (
+	id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	memberID VARCHAR(30),
+	appleID INT(6), 
+	numOfOrder INT(6), 
+	Address VARCHAR(30) NOT NULL,
+	date TIMESTAMP
+	)";
+	if ($con->query($sql) === TRUE) {
+	echo "Table MyGuests created successfully";
+	} else {echo "Error creating table:".$conn->error;}
+
+
+
+
+
+	echo "<ul>Apple</ul>";
+$sql="SELECT * FROM 201121042_Apple";
+$result = mysqli_query($con,$sql);	
+while($row = mysqli_fetch_array($result)) {
+     echo "<ul>".$row['id']."   ";
+	 echo $row['type']."   ";
+	 echo $row['stock']."   ";
+	 echo $row['price']."</ul>";
+ }
+ 
+	echo "<ul>Member</ul>";
+$sql="SELECT * FROM 201121042_Member";
+$result = mysqli_query($con,$sql);	
+while($row = mysqli_fetch_array($result)) {
+     echo "<ul>".$row['id']."   ";
+	 echo $row['password']."   ";
+	 echo $row['name']."   ";
+	 echo $row['Address']."   ";
+   	 echo $row['email']."   ";
+	 echo $row['point']."</ul>";
+ }
+	echo "<ul>Seller</ul>";
+$sql="SELECT * FROM 201121042_Seller";
+$result = mysqli_query($con,$sql);	
+while($row = mysqli_fetch_array($result)) {
+     echo "<ul>".$row['id']."   ";
+	 echo $row['password']."   ";
+	 echo $row['name']."   ";
+   	 echo $row['email']."</ul>";
+ }
+ 
+	echo "<ul>CartList</ul>";
+$sql="SELECT * FROM 201121042_CartList";
+$result = mysqli_query($con,$sql);	
+while($row = mysqli_fetch_array($result)) {
+     echo "<ul>".$row['memberID']."   ";
+	 echo $row['appleID']."</ul>";
+ }
+ 
+	echo "<ul>OrderList</ul>";
+$sql="SELECT * FROM 201121042_OrderList ";
+$result = mysqli_query($con,$sql);	
+while($row = mysqli_fetch_array($result)) {
+     echo "<ul>".$row['memberID']."   ";
+	 echo $row['appleID']."   ";
+	 echo $row['numOfOrder']."   ";
+	 echo $row['Address']."   ";
+	 echo $row['date']."</ul>";
+ }
+
+
+
+$sql = "INSERT INTO 201121042_OrderList  (memberID, appleID, numOfOrder, Address, date)
+VALUES ('linggo',22,1, 'Ajou Univ, Woncheon-dong',NOW())";
+ if ($con->query($sql) === TRUE) {
+	echo "values inserted successfully";
+	} else {echo "Error insert values:".$conn->error;}
+	

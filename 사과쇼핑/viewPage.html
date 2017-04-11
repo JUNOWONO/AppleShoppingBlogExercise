@@ -1,0 +1,352 @@
+﻿<?php
+	session_start();
+?>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta http-equiv="cotnet-type" content="text/html; charset=utf-8">
+	<style>	
+	<!--전체에 좌우 여백 추가 
+	*,
+	*:before,
+	*:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	}
+	-->
+		#topHeader  { 
+			padding: 10px 300px;
+			background-color: whitesmoke;
+			background: url('header.png') no-repeat 0 0;
+			min-width : 300px;
+		}
+	
+        #title {
+			text-decoration:none;
+			display: inline-block;
+			background-color: transparent;
+			color: white;
+			font-size: 25px;
+			font-weight: bold;
+			text-transform: uppercase;
+			padding: 4px 20px;
+			
+		}
+		body {
+            width: 100%;
+			height: auto;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			background-color: whitesmoke;
+			font-family: arial, sans-serif;
+			margin:0px auto;
+        }
+
+   
+		
+
+		#topMenu ul li {
+		list-style: none;
+		color: white;
+		background-color: #2d2d2d;
+		float: left;
+		line-height: 30px;
+		vertical-align: middle;
+		text-align: center;
+		}
+
+		#topMenu .menuLink {
+		text-decoration:none;
+		color: white;
+		display: block;
+		width: 160px;
+		font-size: 12px;
+		font-weight: bold;
+		font-family: "Trebuchet MS";
+		}
+		#topMenu .menuLink:hover {
+			color:  lightgreen;
+			background-color: #4d4d4d;
+		}
+		
+		.container {
+		  margin: 0 auto;
+		  padding-right: .8em;
+		  padding-left: .8em;
+		  width: 100%;
+		  height: auto;
+		  max-width: 1260px;
+		  background-color: whitesmoke;
+		}
+
+		.main-header {
+		  display: inline-block;
+		  align-items: center;
+		}
+
+		.logo {
+		  width: 45px;
+		  margin-left: 6em;
+		  margin-top: 1.8em;
+		  margin-bottom: .4em;
+		  cursor: pointer;
+		}
+
+		.name {
+		  text-transform: uppercase;
+		  font-weight: 600;
+		  font-size: 2.0em;
+		  line-height: 1;
+		  margin: 0 0 1.5em;
+		}
+
+		.name span {
+		  font-weight: 300;
+		}
+
+		img {
+		  max-width: 100%;
+		}
+
+		.gallery-img {
+		  display: block;
+		  width: 100%;
+		}
+
+		.gallery {
+		  width: 100%;
+		  height: auto;
+		  display: flex;
+		  flex-direction: column;
+		  align-items: center;
+		}
+		
+		.photo-container {
+		  margin-bottom: 3em;
+		  text-align: center;
+		  margin-left: .8em;
+		  margin-right: .8em;
+		}
+		
+		h2 {
+		  text-transform: uppercase;
+		  font-size: 1.5em;
+		  line-height: .4;
+		}
+
+		p {
+		  font-size: .9375em;
+		  margin: 0 0 1.5em;
+		  line-height: 1.4;
+		}
+
+
+		/* -- Row 2 Styles --------- */
+
+		.photo {
+		  position: relative;
+		  line-height: 0;
+		  overflow: hidden;
+		  margin-bottom: 2.5em;
+		}
+
+		.photo-overlay {
+		  color: #fff;
+		  position: absolute;
+		  top: 0;
+		  right: 0;
+		  bottom: 0;
+		  left: 0;
+		  padding-left: 1.2em;
+		  padding-right: 1.2em;
+		  display: flex;
+		  flex-direction: column;
+		  justify-content: center;
+		  align-items: center;
+		  background: rgba(0, 0, 0, .5);
+		}
+
+		.photo-overlay h2 {
+		  margin-top: 0;
+		}
+
+		
+		/* =================================
+		  Image Transforms & Transitions
+		==================================== */
+
+
+		/* -- Row 1 --------- */
+
+		img {
+		  transition: transform .5s cubic-bezier(.7, -0.39, .31, 1.38);
+		}
+
+		img:hover {
+		  transform: rotate(-5deg) scale(1.8);
+		}
+
+		/* -- Row 2 --------- */
+
+		.photo-overlay {
+		  opacity: 0;
+		  transition: opacity .5s;
+		}
+
+		.photo-overlay:hover {
+		  opacity: 1;
+		}
+
+		.photo img {
+		  transform-origin: 0 0;
+		}
+
+		.photo:hover img {
+		  transform: scale(1.2);
+		}
+
+		
+
+		/* =================================
+		  Media Queries
+		==================================== */
+
+		@media (min-width: 0) and (max-width: 768px) {
+		  .container {
+			padding: 0 1.225em 2.5em;
+		  }
+		}
+
+		@media (min-width: 1024px) {
+		  .gallery {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+		  }
+		  .photo-container {
+			margin-bottom: 3em;
+			text-align: center;
+			width: 25%;
+			flex-grow: 1;
+		  }
+		}
+
+		@media (min-width: 1600px) {
+		  .photo-container {
+			margin-bottom: 4em;
+			width: 30%;
+		  }
+		  h2 {
+			line-height: 1;
+		  }
+		}
+		
+		
+
+    </style>
+	
+	<title> Apple Shopping </title>
+	
+</head>
+
+<body>
+
+
+
+	<header id="topHeader">
+		<h1> <a  id = 'title' href="appleShopping.html">생명의 사과 - 까지농장 </a></h1>
+	</header>
+	
+	<nav id="topMenu" >
+		<ul>
+			<li><a class="menuLink" href="appleShopping.html">까지농장</a></li>
+			<li>|</li>
+			<li><a class="menuLink" href="orderPage.html">사과주문</a></li>
+			<li>|</li>
+			<li><a class="menuLink" href="viewPage.html">농장둘러보기</a></li>
+			<li>|</li>
+			<li><a class="menuLink" href="#">Q&A </a></li>
+			<li>|</li>
+			<li><a class="menuLink" href="join.html" onClick="window.open('join.html', 'new', 'resizable=no width=400 height=600'); return false">MY</a></li>
+		</ul>
+	</nav>
+
+
+	<div class="container">
+  <header class="main-header">
+    <img class="logo" src="a.jpg">
+    <h1 class="name">사과농장 <span>둘러보기</span></h1>
+  </header>
+
+  <div class="gallery">
+
+    <!-- scale / rotate -->
+
+    <div class="photo-container">
+      <img src="b.jpg" alt="Big Sur">
+      <h2>산좋고 물맑은 농장</h2>
+      <p>오염되지 않은 산골짜기에서 자란 건강한 사과</p>
+    </div>
+
+    <div class="photo-container">
+      <img src="c.jpg" alt="Turquoise waters">
+      <h2>청량산 고랭지 농장</h2>
+      <p>특급 청정지역 정천량산 고랭지 농장에서 자란 사과</p>
+    </div>
+
+    <div class="photo-container">
+      <img src="d.jpg" alt="The retro van">
+      <h2>몸에좋고</h2>
+      <p>맛도 좋은 사과</p>
+    </div>
+
+    <!-- scale / transform-origin -->
+
+    <div class="photo-container">
+      <div class="photo">
+        <img src="e.jpg" alt="Petunia the pug">
+        <div class="photo-overlay">
+          <h2>커도 맛있고</h2>
+		  <p>작아도 맛있는 사과</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="photo-container">
+      <div class="photo">
+        <img src="f.png" alt="Red Facade">
+        <div class="photo-overlay">
+          <h2>겁질째 먹어도 깨끗한</h2>
+		  <p>청정 사과</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="photo-container">
+      <div class="photo">
+        <img src="a.jpg" alt="Ferris Wheel">
+        <div class="photo-overlay">
+          <h2>자연 가득</h2>
+		  <p>우리사과</p>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+	
+	
+
+</body>
+
+	<script>
+		
+	</script>
+
+</html>
